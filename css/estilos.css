@@ -1,0 +1,26 @@
+body 
+{
+	border: 1px solid blue;
+	max-width: 1024px;
+	margin: 0 auto;
+}
+header 
+{
+	border: 1px solid blue;
+}
+header nav 
+{
+	text-align: center;
+}
+header nav ul li
+{
+	display: inline-block;
+
+}
+#principal_usuario
+{
+	margin: 0 auto;
+	width: 300px;
+}
+
+

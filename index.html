@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/estilos.css">
 	<title>Sistema del Curso</title>
 </head>
 <body>
@@ -10,17 +11,25 @@
 		<h1>Sistema de Curso</h1>
 		<nav>
 			<ul> 
-				<li><span <span class="label label-primary">Opciones 1</span></li>
-				<li><span <span class="label label-success">Opciones 2</span></li>
-				<li><span <span class="label label-info">Opciones 3</span></li>
-				<li><span <span class="label label-warning">Opciones 4</span></li>
-				<li><span <span class="label label-primary">Opciones 5</span></li>
+				<li><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Opción 1</button></li>
+				<li><button type="button" class="btn btn-success"><span class="glyphicon glyphicon-file" aria-hidden="true"> Opción 2</button></li>
+				<li><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-remove" aria-hidden="true"> Opción 3</button></li>
+				<li><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-calendar" aria-hidden="true"> Opción 4</button></li>
+				<li><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-home" aria-hidden="true"> Opción 5</button></li>
 			</ul>
 		</nav>
 		
 	</header>
-	<section>
-		
+	<section id="principal_usuario">
+		<div class="panel panel-primary">
+		   <div class="panel-heading">Proporcione los datos</div>
+		  <div class="panel-body">
+		    <input type="text" class="form-control" placeholder="Nombre de Usuario" autofocus>
+		    <input type="password" class="form-control" placeholder="Clave">
+		    <button type="button" class="btn btn-primary btn-lg btn-block">Entrar  <span class="glyphicon glyphicon-ok" aria-hidden="true"></span></button>
+		  </div>
+		  <div class="panel-footer"><small>DR &copy; 2015</small></div>
+		</div>
 	</section>
 </body>
 </html>
