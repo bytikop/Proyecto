@@ -8,6 +8,7 @@ function conexionBD()
 function validaentrada()
 {
 	$respuesta = false;
+	$nombre    ="";
 	$usuario   = "'".$_POST["usuario"]."'";
 	$clave     = "'".md5($_POST["clave"])."'";
 	$cn        = conexionBD();
@@ -15,9 +16,10 @@ function validaentrada()
 	$res       = mysql_query($qryvalida);
 	if($row = mysql_fetch_array($res))
 	{
+		$nombre    = $row["nombre"];
 		$respuesta = true;
 	}
-	$arrayJSON = array('respuesta' => $respuesta);
+	$arrayJSON = array('respuesta' => $respuesta,'nombre' => $nombre);
 	print json_encode($arrayJSON);
 }
 //menu principal o controlador

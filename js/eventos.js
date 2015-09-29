@@ -11,22 +11,43 @@ var empiezaApp = function()
 			$.ajax({
 				cache:false,
 				type: "POST",
-				dateType: "json",
+				dataType: "json",
 				url: "php/utilerias.php",
 				data: parametros,
 				success: function(response){
 					console.log(response.respuesta);
-					if (response.respuesta==true) 
+					if(response.respuesta==true)
 					{
-						alert("aqui");
+						$("#principal_usuario").hide("slow");
+						$("#menuprincipal").show("slow");
+						$("#nombreusuario").html("Usuario: "+response.nombre);
 					}
+				},
+				error: function(xhr,ajaxOptions,thrownError){
+
 				}
 			});
 		}
 		else
 			alert("Nombre de usuario o contraseña incorrectos");
 	}
+	var usuario_tecla = function(tecla)
+	{
+		if (tecla.which==13)
+		{
+			$("#clave").focus();
+		}	
+	}
+	var clave_tecla=function(tecla)
+	{
+		if (tecla.which==13) 
+		{
+			ValidarUsuario();
+		};
+	}
 	$("#btnEntrar").on("click",ValidarUsuario);
+	$("#usuario").on("keypress",usuario_tecla);
+	$("#clave").on("keypress",clave_tecla);
 }
 // inicio de la pagina
 $(document).on("ready",empiezaApp);
