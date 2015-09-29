@@ -3,10 +3,19 @@ body
 	border: 1px solid blue;
 	max-width: 1024px;
 	margin: 0 auto;
+	border-radius: 5px;
 }
 header 
 {
 	border: 1px solid blue;
+	border-radius: 5px;
+}
+img
+{
+	width: 80px;
+	float: right;
+	margin: 35px 10px 0px 0px;
+
 }
 header nav 
 {
@@ -16,6 +25,7 @@ header nav
 header nav ul li
 {
 	display: inline-block;
+	margin-right: 10px;
 
 }
 #principal_usuario
@@ -32,5 +42,14 @@ header nav ul li
 	margin: 0px 10px 0px 0px;
 	padding: 0px 5px 0px 5px;
 }
-
+#semestreactual
+{
+	display: none;
+	background: slateblue;
+	border-radius: 5px;
+	color: white;
+	float: left;
+	margin: 0px 0px 0px 10px;
+	padding: 0px 5px 0px 5px;
+}
 

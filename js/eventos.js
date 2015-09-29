@@ -20,6 +20,7 @@ var empiezaApp = function()
 					{
 						$("#principal_usuario").hide("slow");
 						$("#menuprincipal").show("slow");
+						$("#semestreactual").show("slow");
 						$("#nombreusuario").html("Usuario: "+response.nombre);
 					}
 				},
