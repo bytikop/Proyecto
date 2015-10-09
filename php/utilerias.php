@@ -22,13 +22,33 @@ function validaentrada()
 	$arrayJSON = array('respuesta' => $respuesta,'nombre' => $nombre);
 	print json_encode($arrayJSON);
 }
+function enviarAltaUsuario()
+{
+	$respuesta = false;
+	$usuario   = $_POST["usuario"];
+	$nombre    = $_POST["nombre"];
+	$status   = $_POST["status"];
+	$cn        = conexionBD();
+	//INSERT INTO `usuarios` (`usuario`, `nombre`, `status`) VALUES ('2', '2', '1')
+	echo "INSERT INTO usuarios(usuario,nombre,status) VALUES('".$usuario."','".$nombre."'.'".$status."')";
+	$qryinsertausuario ="INSERT INTO usuarios(usuario,nombre,status) VALUES('".$usuario."','".$nombre."'.'".$status."')";
+	$resinsertausuario =mysql_query($qryinsertausuario);
+	if (mysql_affected_rows()>0) 
+	{
+		$respuesta = true;
+	}
+	$arrayJSON = array('respuesta' => $respuesta );
+	print json_encode($arrayJSON);
+}
 //menu principal o controlador
 $opc = $_POST["opc"];
 switch ($opc) {
  	case 'validaentrada':
  		validaentrada();
  		break;
- 	
+ 	case 'enviarAltaUsuario':
+ 	enviarAltaUsuario();
+ 		break;
  	default:
  		# code...
  		break;

@@ -19,7 +19,7 @@
 		<div id="nombreusuario"></div><br>
 		<nav id="menuprincipal">
 			<ul> 
-				<li><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Opción 1</button></li>
+				<li><button type="button" class="btn btn-primary" id="btnmenuAltaUsuario"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Alta</button></li>
 				<li><button type="button" class="btn btn-success"><span class="glyphicon glyphicon-file" aria-hidden="true"> Opción 2</button></li>
 				<li><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-remove" aria-hidden="true"> Opción 3</button></li>
 				<li><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-calendar" aria-hidden="true"> Opción 4</button></li>
@@ -37,6 +37,15 @@
 		  </div>
 		  <div class="panel-footer"><small>DR &copy; 2015</small></div>
 		</div>
+	</section>
+	<section id="frmAltaUsuarios">
+		<h2>Alta de Usuarios</h2>
+		<form action="#" name="frmAltausuariosdatos" id="frmAltausuariosdatos">
+			<input type="text" placeholder="Nombre de Usuario" id="frmnombreusuario" autofocus class="form-control">
+			<input type="text" placeholder="Nombre de completo" id="frmnombrecompleto" class="form-control">
+			<input type="text" placeholder="Estatus del Usuario" id="frmstatususuario" class="form-control">
+			<button class="btn btn-success btn-lg btn-block" id="btnenviarAltaUsuario">Enviar  <span class="glyphicon glyphicon-plane" aria-hidden="true"></span></button>
+		</form>
 	</section>
 </body>
 </html>

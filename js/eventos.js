@@ -15,7 +15,6 @@ var empiezaApp = function()
 				url: "php/utilerias.php",
 				data: parametros,
 				success: function(response){
-					console.log(response.respuesta);
 					if(response.respuesta==true)
 					{
 						$("#principal_usuario").hide("slow");
@@ -46,9 +45,39 @@ var empiezaApp = function()
 			ValidarUsuario();
 		};
 	}
+	var menuAltaUsuario=function()
+	{
+		$("#frmAltaUsuarios").show("slow");
+	}
+	var enviarAltaUsuario=function()
+	{
+		var usuario    = $("#frmnombreusuario").val();
+		var nombre     = $("#frmnombrecompleto").val();
+		var status    = $("#frmstatususuario").val();
+		var parametros = "opc=enviarAltaUsuario"+"&usuario="+usuario+"&nombre="+nombre+"&status="+status+"&id="+Math.random();
+		$.ajax({
+				cache:false,
+				type: "POST",
+				dataType: "json",
+				url: "php/utilerias.php",
+				data: parametros,
+				success: function(response){
+					if(response.respuesta==true)
+						alert("Usuario resgistrado con éxito");
+					else
+						alert("No se a podido dar de alta al usuario");
+				},
+				error: function(xhr,ajaxOptions,thrownError){
+					console.log("Ha ocurrido un error");
+				}
+			});
+	}
 	$("#btnEntrar").on("click",ValidarUsuario);
 	$("#usuario").on("keypress",usuario_tecla);
 	$("#clave").on("keypress",clave_tecla);
+	$("#btnmenuAltaUsuario").on("click",menuAltaUsuario);
+	$("#btnenviarAltaUsuario").on("click",enviarAltaUsuario);
+
 }
 // inicio de la pagina
 $(document).on("ready",empiezaApp);

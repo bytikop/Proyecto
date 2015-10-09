@@ -15,7 +15,6 @@ img
 	width: 80px;
 	float: right;
 	margin: 35px 10px 0px 0px;
-
 }
 header nav 
 {
@@ -27,6 +26,13 @@ header nav ul li
 	display: inline-block;
 	margin-right: 10px;
 
+}
+#frmAltaUsuarios
+{
+	display: none;
+	text-align: center;
+	margin: 0 auto;
+	width: 400px;
 }
 #principal_usuario
 {
