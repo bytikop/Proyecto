@@ -19,6 +19,10 @@ function validaentrada()
 		$nombre    = $row["nombre"];
 		$respuesta = true;
 	}
+	else
+	{
+		echo $qryvalida;
+	}
 	$arrayJSON = array('respuesta' => $respuesta,'nombre' => $nombre);
 	print json_encode($arrayJSON);
 }
@@ -27,17 +31,16 @@ function enviarAltaUsuario()
 	$respuesta = false;
 	$usuario   = $_POST["usuario"];
 	$nombre    = $_POST["nombre"];
-	$status   = $_POST["status"];
+	$estatus   = $_POST["estatus"];
 	$cn        = conexionBD();
-	//INSERT INTO `usuarios` (`usuario`, `nombre`, `status`) VALUES ('2', '2', '1')
-	echo "INSERT INTO usuarios(usuario,nombre,status) VALUES('".$usuario."','".$nombre."'.'".$status."')";
-	$qryinsertausuario ="INSERT INTO usuarios(usuario,nombre,status) VALUES('".$usuario."','".$nombre."'.'".$status."')";
+	//echo "INSERT INTO usuarios(usuario,nombre,estatus) VALUES('".$usuario."','".$nombre."','".$estatus."')";
+	$qryinsertausuario ="INSERT INTO usuarios(usuario,nombre,estatus) VALUES('".$usuario."','".$nombre."','".$estatus."')";
 	$resinsertausuario =mysql_query($qryinsertausuario);
 	if (mysql_affected_rows()>0) 
 	{
 		$respuesta = true;
 	}
-	$arrayJSON = array('respuesta' => $respuesta );
+	$arrayJSON = array('respuesta' => $respuesta);
 	print json_encode($arrayJSON);
 }
 //menu principal o controlador

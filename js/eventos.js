@@ -53,8 +53,8 @@ var empiezaApp = function()
 	{
 		var usuario    = $("#frmnombreusuario").val();
 		var nombre     = $("#frmnombrecompleto").val();
-		var status    = $("#frmstatususuario").val();
-		var parametros = "opc=enviarAltaUsuario"+"&usuario="+usuario+"&nombre="+nombre+"&status="+status+"&id="+Math.random();
+		var estatus    = $("#frmestatususuario").val();
+		var parametros = "opc=enviarAltaUsuario"+"&usuario="+usuario+"&nombre="+nombre+"&estatus="+estatus+"&id="+Math.random();
 		$.ajax({
 				cache:false,
 				type: "POST",
@@ -63,9 +63,17 @@ var empiezaApp = function()
 				data: parametros,
 				success: function(response){
 					if(response.respuesta==true)
+					{
 						alert("Usuario resgistrado con éxito");
+						$("#frmnombreusuario").val("");
+						$("#frmnombrecompleto").val("");
+						$("#frmestatususuario").val("");
+						$("#frmnombreusuario").focus();
+					}
 					else
+					{
 						alert("No se a podido dar de alta al usuario");
+					}
 				},
 				error: function(xhr,ajaxOptions,thrownError){
 					console.log("Ha ocurrido un error");
