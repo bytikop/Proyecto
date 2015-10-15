@@ -53,8 +53,8 @@ var empiezaApp = function()
 	{
 		var usuario    = $("#frmnombreusuario").val();
 		var nombre     = $("#frmnombrecompleto").val();
-		var status    = $("#frmstatususuario").val();
-		var parametros = "opc=enviarAltaUsuario"+"&usuario="+usuario+"&nombre="+nombre+"&status="+status+"&id="+Math.random();
+		var estatus    = $("#frmestatususuario").val();
+		var parametros = "opc=enviarAltaUsuario"+"&usuario="+usuario+"&nombre="+nombre+"&estatus="+estatus+"&id="+Math.random();
 		$.ajax({
 				cache:false,
 				type: "POST",

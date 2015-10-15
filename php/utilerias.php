@@ -27,11 +27,9 @@ function enviarAltaUsuario()
 	$respuesta = false;
 	$usuario   = $_POST["usuario"];
 	$nombre    = $_POST["nombre"];
-	$status   = $_POST["status"];
+	$estatus   = $_POST["estatus"];
 	$cn        = conexionBD();
-	//INSERT INTO `usuarios` (`usuario`, `nombre`, `status`) VALUES ('2', '2', '1')
-	echo "INSERT INTO usuarios(usuario,nombre,status) VALUES('".$usuario."','".$nombre."'.'".$status."')";
-	$qryinsertausuario ="INSERT INTO usuarios(usuario,nombre,status) VALUES('".$usuario."','".$nombre."'.'".$status."')";
+	$qryinsertausuario ="INSERT INTO usuarios(usuario,nombre,estatus) VALUES('".$usuario."','".$nombre."','".$estatus."')";
 	$resinsertausuario =mysql_query($qryinsertausuario);
 	if (mysql_affected_rows()>0) 
 	{
