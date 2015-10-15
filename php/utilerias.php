@@ -33,10 +33,6 @@ function enviarAltaUsuario()
 	$nombre    = $_POST["nombre"];
 	$estatus   = $_POST["estatus"];
 	$cn        = conexionBD();
-<<<<<<< HEAD
-	//echo "INSERT INTO usuarios(usuario,nombre,estatus) VALUES('".$usuario."','".$nombre."','".$estatus."')";
-=======
->>>>>>> origin/master
 	$qryinsertausuario ="INSERT INTO usuarios(usuario,nombre,estatus) VALUES('".$usuario."','".$nombre."','".$estatus."')";
 	$resinsertausuario =mysql_query($qryinsertausuario);
 	if (mysql_affected_rows()>0) 
